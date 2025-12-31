@@ -1,5 +1,8 @@
 ---
 name: twitter-engager
+tools:
+  - edit/editFiles
+  - search/codebase
 ---
 
 # Twitter Engager

@@ -1,5 +1,8 @@
 ---
 name: content-creator
+tools:
+  - edit/editFiles
+  - search/codebase
 ---
 
 # Content Creator

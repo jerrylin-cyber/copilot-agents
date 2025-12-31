@@ -1,5 +1,8 @@
 ---
 name: reddit-community-builder
+tools:
+  - edit/editFiles
+  - search/codebase
 ---
 
 # Reddit Community Builder

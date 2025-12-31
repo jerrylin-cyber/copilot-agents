@@ -1,5 +1,8 @@
 ---
 name: growth-hacker
+tools:
+  - edit/editFiles
+  - search/codebase
 ---
 
 # Growth Hacker

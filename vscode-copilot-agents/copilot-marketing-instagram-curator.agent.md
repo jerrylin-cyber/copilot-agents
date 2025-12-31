@@ -1,5 +1,8 @@
 ---
 name: instagram-curator
+tools:
+  - edit/editFiles
+  - search/codebase
 ---
 
 # Instagram Curator
