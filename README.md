@@ -1,298 +1,275 @@
-# Contains Studio AI Agents
+# VS Code Copilot Agents
 
-A comprehensive collection of specialized AI agents designed to accelerate and enhance every aspect of rapid development. Each agent is an expert in their domain, ready to be invoked when their expertise is needed.
+一套完整的 37 個專業 AI agents 集合，專為 VS Code GitHub Copilot 設計，轉換自 [Contains Studio AI Agents](https://github.com/contains-studio/agents)。每個 agent 都是其領域的專家，隨時準備增強你的開發工作流程。
 
-## 📥 Installation
+## 🚀 快速開始
 
-1. **Download this repository:**
-   ```bash
-   git clone https://github.com/contains-studio/agents.git
-   ```
+```bash
+# 克隆專案
+git clone https://github.com/lazyjerry/vscode-copilot-agents.git
+cd vscode-copilot-agents
 
-2. **Copy to your Claude Code agents directory:**
-   ```bash
-   cp -r agents/* ~/.claude/agents/
-   ```
-   
-   Or manually copy all the agent files to your `~/.claude/agents/` directory.
+# 複製單一 agent 到 .github/agents/ 目錄
+mkdir -p .github/agents
+cp vscode-copilot-agents/copilot-engineering-frontend-developer.agent.md .github/agents/
 
-3. **Restart Claude Code** to load the new agents.
-
-## 🚀 Quick Start
-
-Agents are automatically available in Claude Code. Simply describe your task and the appropriate agent will be triggered. You can also explicitly request an agent by mentioning their name.
-
-📚 **Learn more:** [Claude Code Sub-Agents Documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
-
-### Example Usage
-- "Create a new app for tracking meditation habits" → `rapid-prototyper`
-- "What's trending on TikTok that we could build?" → `trend-researcher`
-- "Our app reviews are dropping, what's wrong?" → `feedback-synthesizer`
-- "Make this loading screen more fun" → `whimsy-injector`
-
-## 📁 Directory Structure
-
-Agents are organized by department for easy discovery:
-
-```
-contains-studio-agents/
-├── design/
-│   ├── brand-guardian.md
-│   ├── ui-designer.md
-│   ├── ux-researcher.md
-│   ├── visual-storyteller.md
-│   └── whimsy-injector.md
-├── engineering/
-│   ├── ai-engineer.md
-│   ├── backend-architect.md
-│   ├── devops-automator.md
-│   ├── frontend-developer.md
-│   ├── mobile-app-builder.md
-│   ├── rapid-prototyper.md
-│   └── test-writer-fixer.md
-├── marketing/
-│   ├── app-store-optimizer.md
-│   ├── content-creator.md
-│   ├── growth-hacker.md
-│   ├── instagram-curator.md
-│   ├── reddit-community-builder.md
-│   ├── tiktok-strategist.md
-│   └── twitter-engager.md
-├── product/
-│   ├── feedback-synthesizer.md
-│   ├── sprint-prioritizer.md
-│   └── trend-researcher.md
-├── project-management/
-│   ├── experiment-tracker.md
-│   ├── project-shipper.md
-│   └── studio-producer.md
-├── studio-operations/
-│   ├── analytics-reporter.md
-│   ├── finance-tracker.md
-│   ├── infrastructure-maintainer.md
-│   ├── legal-compliance-checker.md
-│   └── support-responder.md
-├── testing/
-│   ├── api-tester.md
-│   ├── performance-benchmarker.md
-│   ├── test-results-analyzer.md
-│   ├── tool-evaluator.md
-│   └── workflow-optimizer.md
-└── bonus/
-    ├── joker.md
-    └── studio-coach.md
+# 或使用互動式安裝工具
+./install-vscode-agents.sh
 ```
 
-## 📋 Complete Agent List
+然後重新載入 VS Code（`Cmd+Shift+P` > "Reload Window"）並開始使用 Copilot Chat！
 
-### Engineering Department (`engineering/`)
-- **ai-engineer** - Integrate AI/ML features that actually ship
-- **backend-architect** - Design scalable APIs and server systems
-- **devops-automator** - Deploy continuously without breaking things
-- **frontend-developer** - Build blazing-fast user interfaces
-- **mobile-app-builder** - Create native iOS/Android experiences
-- **rapid-prototyper** - Build MVPs in days, not weeks
-- **test-writer-fixer** - Write tests that catch real bugs
+## 📁 專案結構
 
-### Product Department (`product/`)
-- **feedback-synthesizer** - Transform complaints into features
-- **sprint-prioritizer** - Ship maximum value in 6 days
-- **trend-researcher** - Identify viral opportunities
+本專案提供兩種格式的 agents：
 
-### Marketing Department (`marketing/`)
-- **app-store-optimizer** - Dominate app store search results
-- **content-creator** - Generate content across all platforms
-- **growth-hacker** - Find and exploit viral growth loops
-- **instagram-curator** - Master the visual content game
-- **reddit-community-builder** - Win Reddit without being banned
-- **tiktok-strategist** - Create shareable marketing moments
-- **twitter-engager** - Ride trends to viral engagement
+### 📄 vscode-copilot-agents/ - 即用格式 ⭐
 
-### Design Department (`design/`)
-- **brand-guardian** - Keep visual identity consistent everywhere
-- **ui-designer** - Design interfaces developers can actually build
-- **ux-researcher** - Turn user insights into product improvements
-- **visual-storyteller** - Create visuals that convert and share
-- **whimsy-injector** - Add delight to every interaction
+**所有 37 個 agents 都在單一目錄中，方便存取！**
 
-### Project Management (`project-management/`)
-- **experiment-tracker** - Data-driven feature validation
-- **project-shipper** - Launch products that don't crash
-- **studio-producer** - Keep teams shipping, not meeting
+```
+vscode-copilot-agents/
+├── copilot-engineering-frontend-developer.agent.md
+├── copilot-engineering-backend-architect.agent.md
+├── copilot-design-ui-designer.agent.md
+├── copilot-marketing-content-creator.agent.md
+└── ... (共 37 個 .agent.md 檔案)
+```
 
-### Studio Operations (`studio-operations/`)
-- **analytics-reporter** - Turn data into actionable insights
-- **finance-tracker** - Keep the studio profitable
-- **infrastructure-maintainer** - Scale without breaking the bank
-- **legal-compliance-checker** - Stay legal while moving fast
-- **support-responder** - Turn angry users into advocates
+**特點：**
+- ✅ 統一命名：`copilot-{類別}-{名稱}.agent.md`
+- ✅ 所有檔案集中在一處
+- ✅ 易於搜尋和過濾
+- ✅ 可直接複製使用
 
-### Testing & Benchmarking (`testing/`)
-- **api-tester** - Ensure APIs work under pressure
-- **performance-benchmarker** - Make everything faster
-- **test-results-analyzer** - Find patterns in test failures
-- **tool-evaluator** - Choose tools that actually help
-- **workflow-optimizer** - Eliminate workflow bottlenecks
+**快速使用：**
+```bash
+# 創建 agents 目錄
+mkdir -p .github/agents
 
-## 🎁 Bonus Agents
-- **studio-coach** - Rally the AI troops to excellence
-- **joker** - Lighten the mood with tech humor
+# 單一 agent
+cp vscode-copilot-agents/copilot-engineering-frontend-developer.agent.md .github/agents/
 
-## 🎯 Proactive Agents
+# 多個 agents
+cp vscode-copilot-agents/copilot-engineering-frontend-developer.agent.md .github/agents/
+cp vscode-copilot-agents/copilot-design-ui-designer.agent.md .github/agents/
 
-Some agents trigger automatically in specific contexts:
-- **studio-coach** - When complex multi-agent tasks begin or agents need guidance
-- **test-writer-fixer** - After implementing features, fixing bugs, or modifying code
-- **whimsy-injector** - After UI/UX changes
-- **experiment-tracker** - When feature flags are added
+# 整個類別的所有 agents
+cp vscode-copilot-agents/copilot-engineering-*.agent.md .github/agents/
+```
 
-## 💡 Best Practices
+### 📚 vscode-copilot/ - 文件與指南
 
-1. **Let agents work together** - Many tasks benefit from multiple agents
-2. **Be specific** - Clear task descriptions help agents perform better
-3. **Trust the expertise** - Agents are designed for their specific domains
-4. **Iterate quickly** - Agents support the 6-day sprint philosophy
+完整的文件和類別索引：
 
-## 🔧 Technical Details
+```
+vscode-copilot/
+├── engineering/          # 7 個 agents 索引
+├── design/              # 5 個 agents 索引
+├── marketing/           # 7 個 agents 索引
+├── product/             # 3 個 agents 索引
+├── project-management/  # 3 個 agents 索引
+├── studio-operations/   # 5 個 agents 索引
+├── testing/             # 5 個 agents 索引
+├── bonus/               # 2 個 agents 索引
+├── README.md            # 主要文件
+├── QUICK_START.md       # 5 分鐘指南
+├── USAGE_GUIDE.md       # 完整使用指南
+├── METADATA.md          # Metadata 說明
+└── STRUCTURE.md         # 結構詳情
+```
 
-### Agent Structure
-Each agent includes:
-- **name**: Unique identifier
-- **description**: When to use the agent with examples
-- **color**: Visual identification
-- **tools**: Specific tools the agent can access
-- **System prompt**: Detailed expertise and instructions
+## 🎯 可用的 Agents（共 37 個）
 
-### Adding New Agents
-1. Create a new `.md` file in the appropriate department folder
-2. Follow the existing format with YAML frontmatter
-3. Include 3-4 detailed usage examples
-4. Write comprehensive system prompt (500+ words)
-5. Test the agent with real tasks
+### 工程開發 (7)
+- **frontend-developer** - React/Vue/Angular、狀態管理、效能優化
+- **backend-architect** - API、資料庫、可擴展系統
+- **devops-automator** - CI/CD、部署、基礎設施
+- **ai-engineer** - ML/AI 整合、模型部署
+- **mobile-app-builder** - iOS/Android 原生開發
+- **rapid-prototyper** - MVP 開發、快速迭代
+- **test-writer-fixer** - 測試、除錯、品質保證
 
-## 📊 Agent Performance
+### 設計 (5)
+- **ui-designer** - 介面設計、元件系統
+- **ux-researcher** - 使用者研究、可用性測試
+- **brand-guardian** - 品牌一致性、視覺識別
+- **visual-storyteller** - 視覺內容、故事敘述
+- **whimsy-injector** - 愉悅互動、動畫效果
 
-Track agent effectiveness through:
-- Task completion time
-- User satisfaction
-- Error rates
-- Feature adoption
-- Development velocity
+### 行銷 (7)
+- **content-creator** - 部落格文章、社群媒體、影片腳本
+- **growth-hacker** - 病毒式循環、使用者獲取
+- **tiktok-strategist** - TikTok 內容策略
+- **instagram-curator** - Instagram 內容與互動
+- **twitter-engager** - Twitter/X 互動策略
+- **reddit-community-builder** - Reddit 社群管理
+- **app-store-optimizer** - ASO、應用商店優化
 
-## 🚦 Status
+### 產品 (3)
+- **feedback-synthesizer** - 使用者回饋分析
+- **sprint-prioritizer** - 功能優先順序
+- **trend-researcher** - 市場趨勢、機會分析
 
-- ✅ **Active**: Fully functional and tested
-- 🚧 **Coming Soon**: In development
-- 🧪 **Beta**: Testing with limited functionality
+### 專案管理 (3)
+- **project-shipper** - 專案交付、上線
+- **studio-producer** - 團隊協調
+- **experiment-tracker** - A/B 測試、實驗追蹤
 
-## 🛠️ Customizing Agents for Your Studio
+### 營運 (5)
+- **analytics-reporter** - 資料分析、洞察報告
+- **finance-tracker** - 財務追蹤
+- **infrastructure-maintainer** - 基礎設施管理
+- **legal-compliance-checker** - 法規合規檢查
+- **support-responder** - 客戶支援
 
-### Agent Customization Todo List
+### 測試 (5)
+- **api-tester** - API 測試、驗證
+- **performance-benchmarker** - 效能優化
+- **test-results-analyzer** - 測試分析
+- **tool-evaluator** - 工具評估
+- **workflow-optimizer** - 工作流程優化
 
-Use this checklist when creating or modifying agents for your specific needs:
+### 額外 (2)
+- **studio-coach** - 團隊指導、最佳實踐
+- **joker** - 科技幽默、調節氣氛
 
-#### 📋 Required Components
-- [ ] **YAML Frontmatter**
-  - [ ] `name`: Unique agent identifier (kebab-case)
-  - [ ] `description`: When to use + 3-4 detailed examples with context/commentary
-  - [ ] `color`: Visual identification (e.g., blue, green, purple, indigo)
-  - [ ] `tools`: Specific tools the agent can access (Write, Read, MultiEdit, Bash, etc.)
+## 🛠️ 安裝方法
 
-#### 📝 System Prompt Requirements (500+ words)
-- [ ] **Agent Identity**: Clear role definition and expertise area
-- [ ] **Core Responsibilities**: 5-8 specific primary duties
-- [ ] **Domain Expertise**: Technical skills and knowledge areas
-- [ ] **Studio Integration**: How agent fits into 6-day sprint workflow
-- [ ] **Best Practices**: Specific methodologies and approaches
-- [ ] **Constraints**: What the agent should/shouldn't do
-- [ ] **Success Metrics**: How to measure agent effectiveness
+### 方法 1：互動式安裝工具（推薦）
 
-#### 🎯 Required Examples by Agent Type
+```bash
+# macOS/Linux
+./install-vscode-agents.sh
 
-**Engineering Agents** need examples for:
-- [ ] Feature implementation requests
-- [ ] Bug fixing scenarios
-- [ ] Code refactoring tasks
-- [ ] Architecture decisions
+# Windows
+.\install-vscode-agents.ps1
+```
 
-**Design Agents** need examples for:
-- [ ] New UI component creation
-- [ ] Design system work
-- [ ] User experience problems
-- [ ] Visual identity tasks
+可選擇預設組合：
+- 前端開發者
+- 全端開發者
+- 設計團隊
+- 行銷團隊
+- 自訂選擇
 
-**Marketing Agents** need examples for:
-- [ ] Campaign creation requests
-- [ ] Platform-specific content needs
-- [ ] Growth opportunity identification
-- [ ] Brand positioning tasks
+### 方法 2：直接複製
 
-**Product Agents** need examples for:
-- [ ] Feature prioritization decisions
-- [ ] User feedback analysis
-- [ ] Market research requests
-- [ ] Strategic planning needs
+```bash
+# 創建 agents 目錄
+mkdir -p .github/agents
 
-**Operations Agents** need examples for:
-- [ ] Process optimization
-- [ ] Tool evaluation
-- [ ] Resource management
-- [ ] Performance analysis
+# 前端開發者設定
+cp vscode-copilot-agents/copilot-engineering-frontend-developer.agent.md .github/agents/
+cp vscode-copilot-agents/copilot-design-ui-designer.agent.md .github/agents/
+cp vscode-copilot-agents/copilot-engineering-test-writer-fixer.agent.md .github/agents/
 
-#### ✅ Testing & Validation Checklist
-- [ ] **Trigger Testing**: Agent activates correctly for intended use cases
-- [ ] **Tool Access**: Agent can use all specified tools properly
-- [ ] **Output Quality**: Responses are helpful and actionable
-- [ ] **Edge Cases**: Agent handles unexpected or complex scenarios
-- [ ] **Integration**: Works well with other agents in multi-agent workflows
-- [ ] **Performance**: Completes tasks within reasonable timeframes
-- [ ] **Documentation**: Examples accurately reflect real usage patterns
+# 全端開發者設定
+cp vscode-copilot-agents/copilot-engineering-frontend-developer.agent.md .github/agents/
+cp vscode-copilot-agents/copilot-engineering-backend-architect.agent.md .github/agents/
+cp vscode-copilot-agents/copilot-engineering-devops-automator.agent.md .github/agents/
+```
 
-#### 🔧 Agent File Structure Template
+### 方法 3：從原始檔案重新生成
 
-```markdown
+```bash
+# 從原始格式轉換所有 agents
+node convert-to-vscode.js --all
+
+# 生成 .agent.md 檔案
+./generate-agent-files.sh
+```
+
+## 📖 使用範例
+
+### 前端開發
+```
+使用 React 和 Tailwind CSS 創建一個響應式儀表板，包含圖表和資料表格
+```
+
+### UI 設計
+```
+設計一個符合 2024 年設計趨勢的現代化登入頁面，支援深色模式
+```
+
+### 內容創作
+```
+為我們的新功能撰寫一篇部落格文章，並創建對應的社群媒體貼文
+```
+
+### API 開發
+```
+設計一個用於使用者認證的 RESTful API，包含速率限制和快取機制
+```
+
+## 🔑 Metadata 格式
+
+每個 agent 都包含完整的 YAML frontmatter：
+
+```yaml
 ---
-name: your-agent-name
-description: Use this agent when [scenario]. This agent specializes in [expertise]. Examples:\n\n<example>\nContext: [situation]\nuser: "[user request]"\nassistant: "[response approach]"\n<commentary>\n[why this example matters]\n</commentary>\n</example>\n\n[3 more examples...]
-color: agent-color
-tools: Tool1, Tool2, Tool3
+name: frontend-developer
+description: 當需要建立使用者介面時使用此 agent...
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
+color: blue
 ---
-
-You are a [role] who [primary function]. Your expertise spans [domains]. You understand that in 6-day sprints, [sprint constraint], so you [approach].
-
-Your primary responsibilities:
-1. [Responsibility 1]
-2. [Responsibility 2]
-...
-
-[Detailed system prompt content...]
-
-Your goal is to [ultimate objective]. You [key behavior traits]. Remember: [key philosophy for 6-day sprints].
 ```
 
-#### 📂 Department-Specific Guidelines
+- **name**：唯一識別符
+- **description**：使用情境和專長
+- **tools**：可用工具（供參考）
+- **color**：視覺識別（供參考）
 
-**Engineering** (`engineering/`): Focus on implementation speed, code quality, testing
-**Design** (`design/`): Emphasize user experience, visual consistency, rapid iteration  
-**Marketing** (`marketing/`): Target viral potential, platform expertise, growth metrics
-**Product** (`product/`): Prioritize user value, data-driven decisions, market fit
-**Operations** (`studio-operations/`): Optimize processes, reduce friction, scale systems
-**Testing** (`testing/`): Ensure quality, find bottlenecks, validate performance
-**Project Management** (`project-management/`): Coordinate teams, ship on time, manage scope
+## 📚 文件
 
-#### 🎨 Customizations
+- [快速開始指南](vscode-copilot/QUICK_START.md) - 5 分鐘快速上手
+- [使用指南](vscode-copilot/USAGE_GUIDE.md) - 完整使用說明
+- [Metadata 指南](vscode-copilot/METADATA.md) - 理解 metadata
+- [目錄結構](DIRECTORY_STRUCTURE.md) - 詳細結構說明
+- [Agent 檔案 README](vscode-copilot-agents/README.md) - 單檔案格式指南
 
-Modify these elements for your needs:
-- [ ] Adjust examples to reflect your product types
-- [ ] Add specific tools agents have access to
-- [ ] Modify success metrics for your KPIs
-- [ ] Update department structure if needed
-- [ ] Customize agent colors for your brand
+## 🔄 轉換細節
 
-## 🤝 Contributing
+這些 agents 從 Claude Code 格式轉換為 VS Code Copilot 格式：
 
-To improve existing agents or suggest new ones:
-1. Use the customization checklist above
-2. Test thoroughly with real projects
-3. Document performance improvements
-4. Share successful patterns with the community
+**保留內容：**
+- ✅ 完整的系統提示詞
+- ✅ 所有專業知識
+- ✅ Metadata（name、description、tools、color）
+- ✅ 最佳實踐和框架
+
+**優化內容：**
+- ✅ 清理描述中的 XML 標籤
+- ✅ 按類別組織
+- ✅ 新增單檔案格式方便使用
+- ✅ 創建完整文件
+
+## 🤝 貢獻
+
+發現問題或有建議？
+
+- **本專案**：https://github.com/lazyjerry/vscode-copilot-agents
+  - [Issues](https://github.com/lazyjerry/vscode-copilot-agents/issues)
+  - [Discussions](https://github.com/lazyjerry/vscode-copilot-agents/discussions)
+
+- **原始專案**：https://github.com/contains-studio/agents
+  - [Issues](https://github.com/contains-studio/agents/issues)
+  - [Discussions](https://github.com/contains-studio/agents/discussions)
+
+## 📜 授權
+
+與原始 [Contains Studio AI Agents](https://github.com/contains-studio/agents) 專案相同的授權。
+
+## 🙏 致謝
+
+特別感謝 [Contains Studio](https://github.com/contains-studio) 創建和維護原始的 AI agents 集合。
+
+---
+
+**總 Agents 數**：37  
+**格式**：VS Code Copilot 兼容  
+**Metadata**：完整（name、description、tools、color）  
+**最後更新**：2025-12-31  
+**轉換成功率**：100%
+
+用 ❤️ 為 VS Code Copilot 社群製作
